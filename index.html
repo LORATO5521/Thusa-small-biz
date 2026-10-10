@@ -1,64 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>THUSA SMALL BIZ - FNB AOTY 2026</title>
+<title>THUSA SMALL BIZ - Advertise Free</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{font-family:Arial;background:#f9f9f9;margin:0;color:#222}
+body{font-family:Arial;background:#f9f9f9;margin:0}
 .header{background:#7A0000;color:white;padding:20px;text-align:center}
 .card{background:white;padding:16px;margin:12px;border-radius:12px;box-shadow:0 2px 5px #ccc;border-left:5px solid #7A0000}
-.badge{background:#FFCC00;color:black;padding:4px 10px;border-radius:15px;font-size:11px;font-weight:bold;margin:2px;display:inline-block}
 .price{color:#007A33;font-weight:bold;font-size:20px}
 .btn{background:#25D366;color:white;padding:12px;width:100%;border:none;border-radius:8px;font-weight:bold;margin-top:8px}
-h3{color:#7A0000;margin-top:0}
+.btn2{background:#FFCC00;color:black;padding:12px;width:100%;border:none;border-radius:8px;font-weight:bold;margin-top:8px}
+input,select{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:6px;box-sizing:border-box}
 </style>
 </head>
 <body>
 
 <div class="header">
-<div style="background:#FFCC00;color:#7A0000;display:inline-block;padding:4px 12px;border-radius:4px;font-weight:bold;font-size:12px">FNB AOTY Hackathon 2026</div>
-<h2>THUSA SMALL BIZ - RURAL YOUTH BUSINESS HUB</h2>
-<p>Mogopela to Letlhakane | One WhatsApp to order all | SA Rands</p>
+<h2>THUSA SMALL BIZ</h2>
+<p>Anyone can publish — Advertise FREE</p>
+<button onclick="document.getElementById('advertForm').style.display='block'" style="background:#FFCC00;color:black;padding:12px 20px;border:none;border-radius:8px;font-weight:bold;font-size:16px">📢 ADVERTISE YOUR BUSINESS FREE</button>
+<p style="font-size:12px;margin-top:8px">Muffin R7 | Braids Small R200 | Spinach R20 | Carrots R12 | Beetroot R10 | Tray R80</p>
 </div>
+
+<!-- ADVERTISE FORM - WHERE PEOPLE ADVERTISE -->
+<div id="advertForm" class="card" style="display:none;border:3px solid #FFCC00">
+<h3>📢 Advertise Your Business — Where to Use</h3>
+<p><b>If you want to advertise your business, use this form — it will publish your product LIVE on Thusa marketplace instantly!</b></p>
+<p>Fill: Your Name, Village, Product, Price in Rands, WhatsApp</p>
+<input id="bName" placeholder="Your Name e.g. Mma Dikeledi">
+<input id="bVillage" placeholder="Village e.g. Mogopela">
+<input id="bProduct" placeholder="Product e.g. Braids Small Size">
+<input id="bPrice" placeholder="Price Rands e.g. R200">
+<input id="bWhatsApp" placeholder="Your WhatsApp e.g. 27712345678">
+<select id="bImg"><option value="🧁">🧁 Muffin</option><option value="💇🏾">💇🏾 Braids</option><option value="🥬">🥬 Spinach</option><option value="🥕">🥕 Carrots</option><option value="🔴">🔴 Beetroot</option><option value="🎂">🎂 Tray Cake</option><option value="👗">👗 Sewing</option></select>
+<button class="btn2" onclick="addBiz()">✅ Publish My Business NOW — FREE</button>
+<button onclick="document.getElementById('advertForm').style.display='none'" style="background:black;color:white;padding:8px;width:100%;border-radius:6px;margin-top:6px">Close</button>
+<p style="font-size:11px">After publish, your product will show below with others. Customers order via WhatsApp. Thusa takes R0 — you keep 100%.</p>
+</div>
+
+<div id="list"></div>
 
 <div class="card">
-<h3>🔴 PROBLEM</h3>
-<p>Youth unemployment 60% (Stats SA 2024). Youth in Taung have skills — baking, braids, farming — but no customers. Baker wastes cakes, farmer spinach rots.</p>
+<h3>How to Advertise — 3 Clicks</h3>
+<p>1. Click yellow button <b>ADVERTISE YOUR BUSINESS FREE</b> on top</p>
+<p>2. Fill form — Product + Price Rands (R7, R200, R20, R12, R10)</p>
+<p>3. Click Publish — Your business appears LIVE for customers to see and order on WhatsApp!</p>
+<p>Also advertise via: WhatsApp Bot, USSD 120*123#, Posters at Spaza shops, Kgotla meetings, Vuselela TVET.</p>
 </div>
 
-<div class="card">
-<h3>🟢 SOLUTION - THUSA</h3>
-<ul>
-<li>WhatsApp Bot — Order Muffin R7, Braids R200, no download</li>
-<li>USSD 120*123# for Gogo — no data needed</li>
-<li>Local Marketplace + Google Maps</li>
-<li>Money Tracker — youth keep 95%</li>
-<li>FNB eWallet — Rands</li>
-</ul>
-</div>
-
-<div class="card" style="border-left-color:#007A33">
-<h3>🛒 Products LIVE - NEW PRICES Rands</h3>
-<p>🧁 Muffin - <span class="price">R7 each</span> — Fresh daily</p>
-<p>💇🏾 Braids Small Size - <span class="price">R200</span> — Beads included, 3-4 hours</p>
-<p>🥬 Spinach Bundle - <span class="price">R20</span> — Farm fresh Mogopela</p>
-<p>🥕 Carrots - <span class="price">R12</span> — 1 bunch fresh</p>
-<p>🔴 Beetroot - <span class="price">R10</span> — Fresh from farm</p>
-<p>🎂 Tray Cake - <span class="price">R80 (12 pcs)</span> — Bestseller parties</p>
-
-<a href="https://wa.me/27700000000?text=Dumela%20I%20want%20Muffin%20R7"><button class="btn">Order Muffin R7 on WhatsApp</button></a>
-<a href="https://wa.me/27700000000?text=Dumela%20I%20want%20Braids%20small%20size%20R200"><button class="btn" style="background:#7A0000">Order Braids Small R200 on WhatsApp</button></a>
-<a href="https://wa.me/27700000000?text=Dumela%20I%20want%20Spinach%20R20%20Carrots%20R12%20Beetroot%20R10"><button class="btn" style="background:#007A33">Order Veggies - Spinach R20 Carrots R12 Beetroot R10</button></a>
-</div>
-
-<div class="card">
-<h3>📈 Impact & Revenue - Rands</h3>
-<p>3 youth employed, 20 customers weekly, <b>R2000 monthly income</b> stays in village.</p>
-<p>Cost: R7,500/month start (Firebase R200 + WhatsApp R1000 + USSD R1500 + Transport R2000)</p>
-<p>Revenue: Premium R30/month + 5% commission (R7.50 per R150 order) + Workshops R50 + Ads R100 = <b>R12,000/month goal</b></p>
-<p>Unfair Advantage: I am from Mogopela Village, Taung — I lived it, speak Setswana — big tech cannot copy community trust.</p>
-<p style="font-size:11px">Built for Sonke & FNB AOTY Hackathon 2026<br>Live: lorato5521.github.io/Thusa-small-biz</p>
-</div>
+<script>
+let biz=[
+{name:"Mma Kelebogile",village:"Mogopela",product:"Muffin",price:"R7",img:"🧁",wa:"27700000000"},
+{name:"Ausi Lorato",village:"Mogopela",product:"Braids Small Size",price:"R200",img:"💇🏾",wa:"27700000000"},
+{name:"Rra Kabelo",village:"Mogopela",product:"Spinach Bundle",price:"R20",img:"🥬",wa:"27700000000"},
+{name:"Mma Dikeledi",village:"Letlhakane",product:"Carrots",price:"R12",img:"🥕",wa:"27700000000"},
+{name:"Mma Dikeledi",village:"Letlhakane",product:"Beetroot",price:"R10",img:"🔴",wa:"27700000000"},
+{name:"Mma Kelebogile",village:"Mogopela",product:"Tray Cake",price:"R80",img:"🎂",wa:"27700000000"}
+];
+function load(){
+let h="";
+biz.forEach(b=>{
+h+=`<div class="card"><div style="font-size:40px">${b.img}</div>
+<h3>${b.product} - <span class="price">${b.price}</span></h3>
+<p><b>${b.name}</b> - ${b.village} <span style="background:#FFCC00;font-size:11px;padding:3px 8px;border-radius:10px">MY PRICE: ${b.price}</span></p>
+<a href="https://wa.me/${b.wa}?text=Dumela%20${b.name}%20I%20want%20${b.product}%20at%20${b.price}" style="text-decoration:none"><button class="btn">Order ${b.price} on WhatsApp</button></a></div>`;
+});
+document.getElementById("list").innerHTML=h;
+}
+function addBiz(){
+let n=document.getElementById('bName').value;
+let v=document.getElementById('bVillage').value;
+let p=document.getElementById('bProduct').value;
+let pr=document.getElementById('bPrice').value;
+let wa=document.getElementById('bWhatsApp').value;
+let img=document.getElementById('bImg').value;
+if(!n||!p||!pr){alert("Fill Name, Product, Price Rands");return;}
+biz.unshift({name:n,village:v,product:p,price:pr,img:img,wa:wa||"27700000000"});
+load();
+document.getElementById('advertForm').style.display='none';
+alert("✅ Your business published! Customers now see "+p+" at "+pr+" — Scroll down!");
+window.scrollTo(0,300);
+}
+load();
+</script>
 
 </body>
 </html>
