@@ -1,31 +1,99 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Thusa — Help Market (Rands)</title>
+<html><head>
+<title>Thusa — Help Market (SA Rands)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{font-family:Arial;background:#f9f9f9;margin:0;padding:10px}
-.header{background:#007A33;color:white;padding:15px;text-align:center;border-radius:10px}
-.card{background:white;padding:15px;margin:10px 0;border-radius:10px;box-shadow:0 2px 5px #ccc}
-.badge{background:#FFB81C;color:black;padding:4px 10px;border-radius:15px;font-size:12px;font-weight:bold;margin:2px;display:inline-block}
-.price{font-size:24px;color:#007A33;font-weight:bold}
-.btn{background:#25D366;color:white;padding:12px;width:100%;border:none;border-radius:8px;font-size:16px;font-weight:bold;margin-top:8px}
-.bar{background:#e8f5e9;padding:12px;margin:10px 0;border-radius:8px;border-left:5px solid #007A33;font-size:14px}
-.reading-page{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;padding:20px;overflow:auto;z-index:100}
-</style>
-</head>
-<body>
+body{font-family:Arial;background:#f5f5f5;margin:0;padding:0;color:#222}
+.header{background:#007A33;color:white;padding:20px;text-align:center}
+.card{background:white;padding:16px;margin:12px;border-radius:12px;box-shadow:0 2px 6px #ccc}
+.badge{background:#FFB81C;color:black;padding:5px 10px;border-radius:15px;font-size:12px;font-weight:bold;display:inline-block;margin:2px}
+.price{font-size:22px;color:#007A33;font-weight:bold}
+.btn{background:#25D366;color:white;padding:12px;width:100%;border:none;border-radius:8px;font-size:16px;font-weight:bold;margin-top:10px}
+h3{margin-top:0;color:#007A33}
+.read{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;padding:20px;overflow:auto;z-index:99}
+</style></head><body>
 
 <div class="header">
 <h2>Thusa — Means HELP (SA Rands Version)</h2>
-<p>Marketplace for Rural Small Biz — Anyone can publish what they have</p>
-<p><span class="badge">No Commission</span> <span class="badge">Own Price Rands</span> <span class="badge">500kb Low-Data</span></p>
+<p>One WhatsApp number to order all rural biz — Anyone can publish</p>
+<p><span class="badge">Thusa takes R0 — Seller keeps 100%</span> <span class="badge">Own Price Rands</span> <span class="badge">500kb Low-Data</span></p>
 </div>
 
-<div class="bar">
-<b>1. PRODUCT:</b> Live at lorato5521.github.io/Thusa-small-biz — Complete, polished, works offline. Any seller can publish.<br>
-<b>2. CREATIVITY:</b> Why Thusa? Facebook needs 50MB, Thusa 500kb. Name Thusa = HELP. No commission.<br>
-<b>3. USABILITY:</b> 3 clicks: Open → Read More → Order WhatsApp. No login. Gogo can use.<br>
-<b>4. SUSTAINABILITY:</b> Free to list, Seller keeps 100% (R0 to Thusa). Boost P5? No — Boost R5/week keeps site alive. GitHub hosting R0 — never dies.<br>
-<b>5. IMPACT:</b> Problem: Youth unemployment, 60km to town, invisible. Impact: 3 youth employed | 20 customers/week | R5000 stays in village | Goal 50 youth.<br>
+<div class="card">
+<h3>🔗 The Problem</h3>
+<p>Youth in Mogopela have skills but no customers. Baker wastes cakes, hairdresser no bookings, farmer morogo rots. 60km to town to sell.</p>
+</div>
+
+<div class="card">
+<h3>🔗 The Solution</h3>
+<p><b>THUSA — One WhatsApp number to order all:</b></p>
+<ul>
+<li>WhatsApp Bot: Order Muffin <b>R5</b>, Tray Cake <b>R80</b></li>
+<li>USSD: <b>120*123#</b> for no-data users (Gogo can use)</li>
+<li>Flutter App + Google Maps for delivery</li>
+<li>FNB eWallet for payments — Rands</li>
+<li>Firebase backend + PWA offline</li>
+</ul>
+<p style="font-size:13px">🧠 Intelligence: WhatsApp API auto-fills R price, Smart search learns, GitHub R0 hosting = sustainable.</p>
+</div>
+
+<div class="card">
+<h3>🔗 Products (Live) — SA Rands</h3>
+<ol>
+<li><b>Muffin - R5 each</b> — Fresh daily, seller keeps 100%</li>
+<li><b>Tray Cake R80 (12 pcs)</b> - Bestseller for parties</li>
+<li><b>Braids - R50</b> — Beads included</li>
+<li><b>Morogo Bundle - R20</b> — Farm fresh, Mogopela grown</li>
+</ol>
+</div>
+
+<div id="list"></div>
+
+<div class="card">
+<h3>🔗 Impact — Rands Stay in Village</h3>
+<p><b>3 youth employed, 20 customers weekly, R2000 monthly income.</b></p>
+<p>Before: Money goes to town. Now: R2000 stays in Mogopela. Saves 60km travel. Goal: 50 youth.</p>
+<p><b>Built for Sonke Youth Entrepreneurship Competition 2026</b><br>
+GitHub: github.com/LORATO5521/Thusa-small-biz<br>
+Live: lorato5521.github.io/Thusa-small-biz</p>
+<p><i>Dumela — I am Lorato Team 179 from Mogopela. Thusa = HELP. Small biz to BIG biz.</i></p>
+</div>
+
+<div id="readPage" class="read">
+<button onclick="document.getElementById('readPage').style.display='none'" style="background:black;color:white;padding:8px 14px;border-radius:6px">← Back</button>
+<div id="readContent"></div>
+</div>
+
+<script>
+let biz=[
+{name:"Mma Kelebogile",village:"Mogopela",product:"Muffin",price:"R5",desc:"Muffin R5 each — fresh daily. I set price myself, Thusa takes R0. Wastes no more cakes.",img:"🧁"},
+{name:"Mma Kelebogile",village:"Mogopela",product:"Tray Cake",price:"R80",desc:"Tray Cake R80 (12 pcs) — Bestseller for parties. My price R80 keeps money in village.",img:"🎂"},
+{name:"Ausi Lorato",village:"Mogopela",product:"Braids",price:"R50",desc:"Braids R50 — Protective hairstyle, beads included, 3-4 hours. Bookings via WhatsApp.",img:"💇🏾"},
+{name:"Rra Kabelo",village:"Letlhakane",product:"Morogo Bundle",price:"R20",desc:"Morogo Bundle R20 — Farm fresh, seasonal mix. Farmer morogo no longer rots.",img:"🥬"}
+];
+function load(){
+let h="";
+biz.forEach((b,i)=>{
+h+=`<div class="card"><div style="font-size:45px">${b.img}</div>
+<h3>${b.product} - <span class="price">${b.price}</span> <span class="badge">MY PRICE: ${b.price}</span></h3>
+<p><b>${b.name}</b> - ${b.village} | Seller keeps 100% — Thusa takes R0</p>
+<button class="btn" onclick="openR(${i})">Read More → Order R${b.price.replace('R','')} on WhatsApp</button></div>`;
+});
+document.getElementById("list").innerHTML=h;
+}
+function openR(i){
+let b=biz[i];
+document.getElementById("readContent").innerHTML=`
+<div style="font-size:90px;text-align:center">${b.img}</div>
+<h1>${b.product} — <span class="price">${b.price}</span> (SA Rands)</h1>
+<p><b>${b.name}</b> from ${b.village}</p>
+<p><span class="badge">MY PRICE: ${b.price} — I set it myself</span> <span class="badge">Thusa takes R0</span></p>
+<div class="card"><p>${b.desc}</p><p>Anyone can publish what they have — small to BIG!</p></div>
+<a href="https://wa.me/27700000000?text=Dumela%20${b.name}%20I%20want%20${b.product}%20at%20${b.price}%20from%20${b.village}" style="text-decoration:none"><button class="btn" style="font-size:20px;padding:16px">💬 Order on WhatsApp — ${b.price}</button></a>
+<p style="text-align:center;font-size:11px;margin-top:12px">Boost top for R5/week keeps Thusa alive. GitHub hosting R0. FNB eWallet ready. Built for Sonke 2026.</p>`;
+document.getElementById("readPage").style.display="block";
+}
+load();
+</script>
+</body></html>
 
