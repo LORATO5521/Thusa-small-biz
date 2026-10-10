@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thusa Small Biz</title>
+<style>
+body{font-family:Arial;margin:0;background:#fff;text-align:center}
+header{background:#000;color:#fff;padding:20px}
+.card{border:1px solid #ddd;margin:15px;padding:15px;border-radius:12px}
+.btn{background:#25D366;color:#fff;padding:12px 20px;text-decoration:none;border-radius:8px;display:inline-block;font-weight:bold;margin-top:10px}
+</style>
+</head>
+<body>
+<header>
+<h1>Thusa Small Biz</h1>
+<p>Mogopela Youth Marketplace via WhatsApp</p>
+</header>
+<div class="card">
+<h2>🧁 Tray Cake - P80</h2>
+<p>Fresh bakery</p>
+<a class="btn" href="https://wa.me/27785521424?text=Hi%20I%20want%20Tray%20Cake%20P80">Order on WhatsApp</a>
+</div>
+<div class="card">
+<h2>🥕 Organic Veggies - P20</h2>
+<p>Beetroot, Carrots, Spinach</p>
+<a class="btn" href="https://wa.me/27785521424?text=Hi%20I%20want%20Veggies%20P20">Order on WhatsApp</a>
+</div>
+<div class="card">
+<h2>💇 Bridal Braids - P250</h2>
+<p>With pearls</p>
+<a class="btn" href="https://wa.me/27785521424?text=Hi%20I%20want%20Braids%20P250">Order on WhatsApp</a>
+</div>
+<footer style="padding:20px;background:#eee">
+<p>WhatsApp: 078 552 1424 | Mogopela, NW</p>
+</footer>
+</body>
+</html>
