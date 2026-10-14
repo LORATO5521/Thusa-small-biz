@@ -1,88 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>THUSA SMALL BIZ - Advertise Free</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THUSA SMALL BIZ</title>
 <style>
-body{font-family:Arial;background:#f9f9f9;margin:0}
-.header{background:#7A0000;color:white;padding:20px;text-align:center}
-.card{background:white;padding:16px;margin:12px;border-radius:12px;box-shadow:0 2px 5px #ccc;border-left:5px solid #7A0000}
-.price{color:#007A33;font-weight:bold;font-size:20px}
-.btn{background:#25D366;color:white;padding:12px;width:100%;border:none;border-radius:8px;font-weight:bold;margin-top:8px}
-.btn2{background:#FFCC00;color:black;padding:12px;width:100%;border:none;border-radius:8px;font-weight:bold;margin-top:8px}
-input,select{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:6px;box-sizing:border-box}
+body{font-family:Arial;margin:0;background:#FFF8F0}
+.header{background:#FF6B00;color:white;padding:15px;text-align:center}
+.nav{display:flex;justify-content:space-around;background:white;padding:10px;position:sticky;bottom:0}
+.card{background:white;margin:10px;padding:15px;border-radius:12px;box-shadow:0 2px 5px #ccc}
+.btn{background:#FF6B00;color:white;border:none;padding:10px 15px;border-radius:8px;width:100%;margin-top:5px}
+.lang{float:right;background:white;color:#FF6B00;padding:2px 8px;border-radius:10px}
+input,select{width:100%;padding:8px;margin:5px 0;border:1px solid #ddd;border-radius:6px}
 </style>
 </head>
 <body>
-
 <div class="header">
-<h2>THUSA SMALL BIZ</h2>
-<p>Anyone can publish — Advertise FREE</p>
-<button onclick="document.getElementById('advertForm').style.display='block'" style="background:#FFCC00;color:black;padding:12px 20px;border:none;border-radius:8px;font-weight:bold;font-size:16px">📢 ADVERTISE YOUR BUSINESS FREE</button>
-<p style="font-size:12px;margin-top:8px">Muffin R7 | Braids Small R200 | Spinach R20 | Carrots R12 | Beetroot R10 | Tray R80</p>
+  <div class="lang" onclick="toggleLang()">EN / ST</div>
+  <h2>THUSA SMALL BIZ</h2>
+  <small>Rural Youth Business App - Mogopela Village</small>
 </div>
 
-<!-- ADVERTISE FORM - WHERE PEOPLE ADVERTISE -->
-<div id="advertForm" class="card" style="display:none;border:3px solid #FFCC00">
-<h3>📢 Advertise Your Business — Where to Use</h3>
-<p><b>If you want to advertise your business, use this form — it will publish your product LIVE on Thusa marketplace instantly!</b></p>
-<p>Fill: Your Name, Village, Product, Price in Rands, WhatsApp</p>
-<input id="bName" placeholder="Your Name e.g. Mma Dikeledi">
-<input id="bVillage" placeholder="Village e.g. Mogopela">
-<input id="bProduct" placeholder="Product e.g. Braids Small Size">
-<input id="bPrice" placeholder="Price Rands e.g. R200">
-<input id="bWhatsApp" placeholder="Your WhatsApp e.g. 27712345678">
-<select id="bImg"><option value="🧁">🧁 Muffin</option><option value="💇🏾">💇🏾 Braids</option><option value="🥬">🥬 Spinach</option><option value="🥕">🥕 Carrots</option><option value="🔴">🔴 Beetroot</option><option value="🎂">🎂 Tray Cake</option><option value="👗">👗 Sewing</option></select>
-<button class="btn2" onclick="addBiz()">✅ Publish My Business NOW — FREE</button>
-<button onclick="document.getElementById('advertForm').style.display='none'" style="background:black;color:white;padding:8px;width:100%;border-radius:6px;margin-top:6px">Close</button>
-<p style="font-size:11px">After publish, your product will show below with others. Customers order via WhatsApp. Thusa takes R0 — you keep 100%.</p>
+<!-- 1. LEARNING -->
+<div id="learning" class="card">
+  <h3 id="t-learn">1) Business Learning (English & Setswana)</h3>
+  <div class="card">
+    <b id="l1">How to Price</b><p id="l1d">Price = Cost + Profit. Example: If cake costs R50 to make, sell for R80.</p>
+    <p><i>Setswana: Theko = Ditshenyegelo + Poelo</i></p>
+  </div>
+  <div class="card">
+    <b id="l2">How to Save</b><p id="l2d">Save 30% of every sale. Use FNB eWallet.</p>
+  </div>
+  <div class="card">
+    <b id="l3">How to Sell</b><p id="l3d">Post in Marketplace + Share on WhatsApp Status.</p>
+  </div>
+  <button class="btn" onclick="linkFNB()">4) FNB Academy Link - Connect Learning</button>
 </div>
 
-<div id="list"></div>
+<!-- 2. MARKETPLACE -->
+<div id="market" class="card">
+  <h3>2) Local Marketplace</h3>
+  <input id="itemName" placeholder="What are you selling? e.g. Cakes, Hairstyles, Veggies">
+  <input id="itemPrice" type="number" placeholder="Price R">
+  <input id="itemLoc" placeholder="Location e.g. Mogopela">
+  <button class="btn" onclick="postItem()">Post My Product</button>
+  <div id="marketList"></div>
+  <p><small>Map View: Customers nearby can find you (low data mode)</small></p>
+</div>
 
+<!-- 3. MONEY TRACKER -->
+<div id="money" class="card">
+  <h3>3) Money Tracker - Income / Expense</h3>
+  <select id="type"><option value="income">Income - Tseno</option><option value="expense">Expense - Ditshenyegelo</option></select>
+  <input id="amount" type="number" placeholder="Amount R">
+  <input id="desc" placeholder="For what?">
+  <button class="btn" onclick="addMoney()">Add</button>
+  <div id="balance"><b>Balance: R0</b></div>
+  <div id="moneyList"></div>
+</div>
+
+<!-- WHATSAPP BOT & USSD INFO -->
 <div class="card">
-<h3>How to Advertise — 3 Clicks</h3>
-<p>1. Click yellow button <b>ADVERTISE YOUR BUSINESS FREE</b> on top</p>
-<p>2. Fill form — Product + Price Rands (R7, R200, R20, R12, R10)</p>
-<p>3. Click Publish — Your business appears LIVE for customers to see and order on WhatsApp!</p>
-<p>Also advertise via: WhatsApp Bot, USSD 120*123#, Posters at Spaza shops, Kgotla meetings, Vuselela TVET.</p>
+  <h3>WhatsApp Bot + USSD (Low Data)</h3>
+  <p>Works on: *120*THUSA# or WhatsApp: +27 71 THUSA</p>
+  <button class="btn" style="background:#25D366" onclick="window.open('https://wa.me/27710000000?text=Thusa%20Small%20Biz')">Open WhatsApp Bot</button>
 </div>
 
 <script>
-let biz=[
-{name:"Mma Kelebogile",village:"Mogopela",product:"Muffin",price:"R7",img:"🧁",wa:"27700000000"},
-{name:"Ausi Lorato",village:"Mogopela",product:"Braids Small Size",price:"R200",img:"💇🏾",wa:"27700000000"},
-{name:"Rra Kabelo",village:"Mogopela",product:"Spinach Bundle",price:"R20",img:"🥬",wa:"27700000000"},
-{name:"Mma Dikeledi",village:"Letlhakane",product:"Carrots",price:"R12",img:"🥕",wa:"27700000000"},
-{name:"Mma Dikeledi",village:"Letlhakane",product:"Beetroot",price:"R10",img:"🔴",wa:"27700000000"},
-{name:"Mma Kelebogile",village:"Mogopela",product:"Tray Cake",price:"R80",img:"🎂",wa:"27700000000"}
-];
-function load(){
-let h="";
-biz.forEach(b=>{
-h+=`<div class="card"><div style="font-size:40px">${b.img}</div>
-<h3>${b.product} - <span class="price">${b.price}</span></h3>
-<p><b>${b.name}</b> - ${b.village} <span style="background:#FFCC00;font-size:11px;padding:3px 8px;border-radius:10px">MY PRICE: ${b.price}</span></p>
-<a href="https://wa.me/${b.wa}?text=Dumela%20${b.name}%20I%20want%20${b.product}%20at%20${b.price}" style="text-decoration:none"><button class="btn">Order ${b.price} on WhatsApp</button></a></div>`;
-});
-document.getElementById("list").innerHTML=h;
+let lang='en';
+let balance=0;
+function toggleLang(){
+  lang = lang==='en'?'st':'en';
+  alert(lang==='st'?'Setswana Mode: Thuto ya Kgwebo':'English Mode: Business Learning');
 }
-function addBiz(){
-let n=document.getElementById('bName').value;
-let v=document.getElementById('bVillage').value;
-let p=document.getElementById('bProduct').value;
-let pr=document.getElementById('bPrice').value;
-let wa=document.getElementById('bWhatsApp').value;
-let img=document.getElementById('bImg').value;
-if(!n||!p||!pr){alert("Fill Name, Product, Price Rands");return;}
-biz.unshift({name:n,village:v,product:p,price:pr,img:img,wa:wa||"27700000000"});
-load();
-document.getElementById('advertForm').style.display='none';
-alert("✅ Your business published! Customers now see "+p+" at "+pr+" — Scroll down!");
-window.scrollTo(0,300);
+function linkFNB(){
+  alert('FNB Academy Link: Your learning is connected to real business! Go to FNB Academy module to continue.');
+  window.open('https://www.fnb.co.za/academy','_blank');
 }
-load();
+let items=[];
+function postItem(){
+  let name=document.getElementById('itemName').value;
+  let price=document.getElementById('itemPrice').value;
+  let loc=document.getElementById('itemLoc').value;
+  if(!name||!price) return alert('Fill in product and price');
+  items.push({name,price,loc});
+  document.getElementById('marketList').innerHTML+=`<div class='card'>${name} - R${price} - ${loc} <button onclick='shareWA("${name}")'>Share on WhatsApp</button></div>`;
+}
+function shareWA(name){ window.open(`https://wa.me/?text=I sell ${name} in Mogopela via THUSA SMALL BIZ App`); }
+function addMoney(){
+  let type=document.getElementById('type').value;
+  let amt=parseFloat(document.getElementById('amount').value);
+  let desc=document.getElementById('desc').value;
+  if(!amt) return;
+  if(type==='income') balance+=amt; else balance-=amt;
+  document.getElementById('balance').innerHTML=`<b>Balance: R${balance}</b>`;
+  document.getElementById('moneyList').innerHTML+=`<div>${type}: R${amt} - ${desc}</div>`;
+}
 </script>
-
 </body>
-</html>
+</html> 
