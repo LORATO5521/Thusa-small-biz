@@ -3,99 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THUSA SMALL BIZ</title>
+<title>THUSA SMALL BIZ - For ALL Rural Small Businesses in South Africa 🇿🇦</title>
 <style>
-body{font-family:Arial;margin:0;background:#FFF8F0}
-.header{background:#FF6B00;color:white;padding:15px;text-align:center}
-.nav{display:flex;justify-content:space-around;background:white;padding:10px;position:sticky;bottom:0}
-.card{background:white;margin:10px;padding:15px;border-radius:12px;box-shadow:0 2px 5px #ccc}
-.btn{background:#FF6B00;color:white;border:none;padding:10px 15px;border-radius:8px;width:100%;margin-top:5px}
-.lang{float:right;background:white;color:#FF6B00;padding:2px 8px;border-radius:10px}
-input,select{width:100%;padding:8px;margin:5px 0;border:1px solid #ddd;border-radius:6px}
+body{font-family:Arial,sans-serif;margin:0;background:#f6f6f6;color:#222}
+.header{background:linear-gradient(135deg,#ff6600,#ff8c00);color:#fff;padding:24px 15px;text-align:center}
+.header h1{margin:0;font-size:28px}
+.header p{margin:6px 0 0;font-size:13px;line-height:1.3}
+.badge{background:#fff;color:#ff6600;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:bold;display:inline-block;margin-top:10px}
+.card{background:#fff;margin:12px;border-radius:14px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.card h2{font-size:16px;margin:0 0 10px;color:#ff6600}
+.input,select,textarea{width:100%;padding:11px;margin:6px 0;border:1.5px solid #ddd;border-radius:10px;box-sizing:border-box;font-size:14px}
+.btn{background:#ff6600;color:#fff;border:none;width:100%;padding:13px;border-radius:10px;font-weight:bold;cursor:pointer;margin-top:10px;font-size:15px}
+.btn-whatsapp{background:#25D366}
+.small{font-size:11px;color:#666;line-height:1.4}
+.mapBox{background:#fff3e0;border:2px dashed #ff6600;border-radius:10px;padding:12px;text-align:center;margin:8px 0}
+.province-tag{display:inline-block;background:#e8f5e9;color:#2e7d32;padding:3px 8px;border-radius:12px;font-size:10px;margin:2px}
 </style>
 </head>
 <body>
 <div class="header">
-  <div class="lang" onclick="toggleLang()">EN / ST</div>
-  <h2>THUSA SMALL BIZ</h2>
-  <small>Rural Youth Business App - Mogopela Village</small>
+<h1>THUSA SMALL BIZ 🇿🇦</h1>
+<p><b>For ALL RURAL Small Businesses in South Africa</b></p>
+<p style="font-size:11px">NOT ONLY Rustenburg Boitekong - For ALL Rural Villages in SA<br>Limpopo | Eastern Cape | KZN | North West | Free State | Mpumalanga | Northern Cape</p>
+<div class="badge">📞 CALL / WHATSAPP: 078 552 1424 - FREE HELP</div>
 </div>
 
-<!-- 1. LEARNING -->
-<div id="learning" class="card">
-  <h3 id="t-learn">1) Business Learning (English & Setswana)</h3>
-  <div class="card">
-    <b id="l1">How to Price</b><p id="l1d">Price = Cost + Profit. Example: If cake costs R50 to make, sell for R80.</p>
-    <p><i>Setswana: Theko = Ditshenyegelo + Poelo</i></p>
-  </div>
-  <div class="card">
-    <b id="l2">How to Save</b><p id="l2d">Save 30% of every sale. Use FNB eWallet.</p>
-  </div>
-  <div class="card">
-    <b id="l3">How to Sell</b><p id="l3d">Post in Marketplace + Share on WhatsApp Status.</p>
-  </div>
-  <button class="btn" onclick="linkFNB()">4) FNB Academy Link - Connect Learning</button>
-</div>
-
-<!-- 2. MARKETPLACE -->
-<div id="market" class="card">
-  <h3>2) Local Marketplace</h3>
-  <input id="itemName" placeholder="What are you selling? e.g. Cakes, Hairstyles, Veggies">
-  <input id="itemPrice" type="number" placeholder="Price R">
-  <input id="itemLoc" placeholder="Location e.g. Mogopela">
-  <button class="btn" onclick="postItem()">Post My Product</button>
-  <div id="marketList"></div>
-  <p><small>Map View: Customers nearby can find you (low data mode)</small></p>
-</div>
-
-<!-- 3. MONEY TRACKER -->
-<div id="money" class="card">
-  <h3>3) Money Tracker - Income / Expense</h3>
-  <select id="type"><option value="income">Income - Tseno</option><option value="expense">Expense - Ditshenyegelo</option></select>
-  <input id="amount" type="number" placeholder="Amount R">
-  <input id="desc" placeholder="For what?">
-  <button class="btn" onclick="addMoney()">Add</button>
-  <div id="balance"><b>Balance: R0</b></div>
-  <div id="moneyList"></div>
-</div>
-
-<!-- WHATSAPP BOT & USSD INFO -->
 <div class="card">
-  <h3>WhatsApp Bot + USSD (Low Data)</h3>
-  <p>Works on: *120*THUSA# or WhatsApp: +27 71 THUSA</p>
-  <button class="btn" style="background:#25D366" onclick="window.open('https://wa.me/27710000000?text=Thusa%20Small%20Biz')">Open WhatsApp Bot</button>
+<h2>📍 POST YOUR RURAL BUSINESS - ALL RURAL SA (FIXED)</h2>
+<label>Your Name & Business Name</label>
+<input class="input" id="bname" placeholder="e.g. Mama Dineo - Braids & Kota - Boitekong">
+<label>What do you sell? (Price in Rands & Pula)</label>
+<input class="input" id="bproduct" placeholder="e.g. Braids R200 (P166), Kota R30, Morogo P20=R24">
+<label>📍 YOUR RURAL VILLAGE - SELECT YOUR PROVINCE (ALL RURAL SA 🇿🇦)</label>
+<select id="loc" onchange="updatePlace()">
+<option>Limpopo Rural Village</option>
+<option>Eastern Cape Rural Village</option>
+<option>KwaZulu-Natal Rural Village</option>
+<option selected>North West - Rustenburg Boitekong</option>
+<option>North West - Mogopela Village</option>
+<option>North West - Mahikeng Rural</option>
+<option>Free State Rural Village</option>
+<option>Mpumalanga Rural Village</option>
+<option>Northern Cape Rural Village</option>
+<option>All Rural South Africa 🇿🇦</option>
+</select>
+<div class="mapBox">
+📍 <b>Now Advertising In:</b><br>
+<span id="placeDisplay" style="font-size:18px;color:#ff6600;font-weight:bold">North West - Rustenburg Boitekong</span><br>
+<span class="small">Customers in <span id="placeDisplay2">North West - Rustenburg Boitekong</span> and ALL rural SA will see you</span>
+</div>
+<label>Your WhatsApp / Call Number</label>
+<input class="input" id="bphone" value="078 552 1424">
+<button class="btn" onclick="postBiz()">✅ POST MY RURAL BUSINESS IN <span id="btnPlace">NORTH WEST - RUSTENBURG BOITEKONG</span></button>
+<div id="okBox" style="display:none;margin-top:12px;background:#e8f5e9;border-radius:10px;padding:12px">
+<p style="color:#2e7d32;font-weight:bold;margin:0">✅ SUCCESS! Your rural business is LIVE in <span id="okPlace"></span>!</p>
+<a id="waLink" href="https://wa.me/27785521424" target="_blank" class="btn btn-whatsapp" style="text-align:center;text-decoration:none;display:block">💬 Chat on WhatsApp: 078 552 1424</a>
+</div>
+</div>
+
+<div class="card" style="text-align:center;background:#fff8f0">
+<p style="font-size:12px;margin:0"><b>🇿🇦 THUSA SMALL BIZ - Built to HELP, Not to Sell</b><br>
+Founder: Lorato Sabole | Contact: 078 552 1424<br>
+For ALL Rural Small Businesses in South Africa<br>
+Sonke 2026<br>
+<span style="color:#ff6600;font-weight:bold">FREE HELP PLATFORM - FOR ALL RURAL SA YOUTH</span></p>
 </div>
 
 <script>
-let lang='en';
-let balance=0;
-function toggleLang(){
-  lang = lang==='en'?'st':'en';
-  alert(lang==='st'?'Setswana Mode: Thuto ya Kgwebo':'English Mode: Business Learning');
+function updatePlace(){
+ var v=document.getElementById('loc').value;
+ document.getElementById('placeDisplay').innerText=v;
+ document.getElementById('placeDisplay2').innerText=v;
+ document.getElementById('btnPlace').innerText=v.toUpperCase();
 }
-function linkFNB(){
-  alert('FNB Academy Link: Your learning is connected to real business! Go to FNB Academy module to continue.');
-  window.open('https://www.fnb.co.za/academy','_blank');
+function postBiz(){
+ var v=document.getElementById('loc').value;
+ var name=document.getElementById('bname').value || 'Rural Business';
+ var prod=document.getElementById('bproduct').value || 'Product';
+ var phone=document.getElementById('bphone').value || '078 552 1424';
+ document.getElementById('okPlace').innerText=v;
+ document.getElementById('okBox').style.display='block';
+ alert('SUCCESS! Your rural business LIVE in ' + v + '! Contact: ' + phone);
+ var waMsg = 'Hello Thusa Small Biz, I posted my rural business: ' + name + ' in ' + v;
+ document.getElementById('waLink').href = 'https://wa.me/27785521424?text=' + encodeURIComponent(waMsg);
+ window.open('https://wa.me/27785521424?text=' + encodeURIComponent(waMsg), '_blank');
 }
-let items=[];
-function postItem(){
-  let name=document.getElementById('itemName').value;
-  let price=document.getElementById('itemPrice').value;
-  let loc=document.getElementById('itemLoc').value;
-  if(!name||!price) return alert('Fill in product and price');
-  items.push({name,price,loc});
-  document.getElementById('marketList').innerHTML+=`<div class='card'>${name} - R${price} - ${loc} <button onclick='shareWA("${name}")'>Share on WhatsApp</button></div>`;
-}
-function shareWA(name){ window.open(`https://wa.me/?text=I sell ${name} in Mogopela via THUSA SMALL BIZ App`); }
-function addMoney(){
-  let type=document.getElementById('type').value;
-  let amt=parseFloat(document.getElementById('amount').value);
-  let desc=document.getElementById('desc').value;
-  if(!amt) return;
-  if(type==='income') balance+=amt; else balance-=amt;
-  document.getElementById('balance').innerHTML=`<b>Balance: R${balance}</b>`;
-  document.getElementById('moneyList').innerHTML+=`<div>${type}: R${amt} - ${desc}</div>`;
-}
+updatePlace();
 </script>
 </body>
-</html> 
+  </html>
